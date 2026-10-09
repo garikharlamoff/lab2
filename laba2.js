@@ -203,7 +203,7 @@ function isPrime(n) {
   // Проверяем делители ручным циклом
   for (let i = 2; i * i <= n; i++) {
     if (n % i === 0) {
-      return false; // Если разделилось без остатка — число составное
+      return false;
     }
   }
   return true;
@@ -376,8 +376,8 @@ function numberToStringInBase(number, base) {
 
   while (num > 0) {
     let remainder = num % base;
-    result = chars[remainder] + result; // Добавляем символ остатка в начало строки
-    num = (num - remainder) / base;     // Делим нацело без Math.floor
+    result = chars[remainder] + result; 
+    num = (num - remainder) / base;     
   }
 
   return result;
@@ -564,13 +564,12 @@ function roundToSmallestInteger(number) {
   let remainder = number % 1;
   
   if (remainder === 0) {
-    return number; // Если число уже целое, ничего делать не нужно
+    return number; 
   }
 
   if (number >= 0) {
-    return number - remainder; // Отрезаем хвост у положительных
+    return number - remainder; 
   } else {
-    // Для отрицательных убираем хвост и сдвигаем влево на 1
     let truncated = number - remainder;
     return truncated - 1;
   }
