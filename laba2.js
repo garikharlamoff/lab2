@@ -734,7 +734,7 @@ function runAutoTest() {
         } catch (error) {
             alert("Ошибка в команде: " + error.message);
         }
-        
+      
         runAutoTest();
     }
 }
